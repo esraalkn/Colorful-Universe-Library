@@ -1,0 +1,41 @@
+﻿@model Colorful_Universe_Library.Models.Entity.TBLHAREKET
+@{
+    ViewBag.Title = "BorrowBook";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>BORROW BOOK</h2>
+
+<form class="form-group">
+
+    <div style="margin-top:15px">
+        <label>Name Of Book</label>
+        @Html.DropDownListFor(h => h.TBLKITAP.ID, (List<SelectListItem>)ViewBag.vle1, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Name Of User</label>
+        @Html.DropDownListFor(h => h.TBLUYELER.ID, (List<SelectListItem>)ViewBag.vle2, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Name Of Personnel</label>
+        @Html.DropDownListFor(h => h.TBLPERSONEL.ID, (List<SelectListItem>)ViewBag.vle3, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Date of Acquisition</label>
+        @Html.TextBoxFor(h => h.ALISTARIH, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>State</label>
+        @Html.TextBoxFor(h => h.DURUM, new { @class = "form-control" })
+    </div>
+</form>
+
+    <div style="margin-top:15px">
+        <a class="btn btn-group" style="background:#0094ff; color:#ffffff">BORROW BOOK</a>
+    </div>
+
+

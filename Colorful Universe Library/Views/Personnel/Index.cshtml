@@ -1,0 +1,32 @@
+﻿@using Colorful_Universe_Library.Models.Entity
+@model List<TBLPERSONEL>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>PERSONNEL PAGE</h2>
+
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Personnel's Name</th>    
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+
+    @foreach (var personnel in Model)
+    {
+        <tr>
+            <td>@personnel.ID</td>
+            <td>@personnel.PERSONEL</td>            
+            <td>@Html.ActionLink("DELETE", "DeletePersonnel", new { id = personnel.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Do you want to delete')" }) </td>
+            <td><a class="btn btn-warning" href="/Personnel/ComePersonnel/@personnel.ID">UPDATE</a></td>
+
+        </tr>
+    }
+</table>
+<a class="btn btn-primary" style="margin-bottom:20px" href="/Personnel/AddPersonnel">PERSONNEL ADD</a>
+

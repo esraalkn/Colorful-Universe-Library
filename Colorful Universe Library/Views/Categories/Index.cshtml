@@ -1,0 +1,30 @@
+﻿@using Colorful_Universe_Library.Models.Entity
+@model List<TBLKATEGORI>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>CATEGORIES</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Catogory ID</th>
+        <th>Catogory Name</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach(var category in Model)
+    {
+        <tr>
+            <td> @category.ID </td>
+            <td> @category.AD </td>
+            <td> <a class="btn btn-danger" href="/Categories/CategoryDelete/@category.ID">DELETE</a> </td>
+            <td> <a class="btn btn-warning" href="/Categories/ComeCategory/@category.ID">UPDATE</a></td>
+        </tr>
+    }
+
+</table>
+
+<a class="btn btn-primary" style="margin-bottom:20px" href="/Categories/AddCategory">CATEGORY ADD</a>
+

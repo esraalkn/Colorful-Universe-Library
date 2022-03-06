@@ -1,0 +1,56 @@
+﻿@model Colorful_Universe_Library.Models.Entity.TBLUYELER
+@{
+    ViewBag.Title = "AddUser";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>ADD USER</h2>
+
+<form class="form-group" method="post">
+
+    <div style="margin-top:15px">
+    <label>User's Name</label>
+    @Html.TextBoxFor(u => u.AD, new { @class = "form-control" })
+    @Html.ValidationMessageFor(u => u.AD, "", new { @style = "color:red" })
+    </div>
+
+    <div style="margin-top:15px">
+    <label>User's Surname</label>
+    @Html.TextBoxFor(u => u.SOYAD, new { @class = "form-control" })
+    @Html.ValidationMessageFor(u => u.SOYAD, "", new { @style = "color:red" })
+    </div>
+
+    <div style="margin-top:15px">
+    <label>User's Mail</label>
+    @Html.TextBoxFor(u => u.MAIL, new { @class = "form-control" })
+    @Html.ValidationMessageFor(u => u.MAIL, "", new { @style = "color:red" })
+    </div>
+
+    <div style="margin-top:15px">
+    <label>User's Nickname</label>
+    @Html.TextBoxFor(u => u.KULLANICIADI, new { @class = "form-control" })
+    @Html.ValidationMessageFor(u => u.KULLANICIADI, "", new { @style = "color:red" })
+    </div>
+
+    <div style="margin-top:15px">
+    <label>User's Password</label>
+    @Html.TextBoxFor(u => u.SIFRE, new { @class = "form-control" })
+    @Html.ValidationMessageFor(u => u.SIFRE, "", new { @style = "color:red" })
+    </div>
+
+    <div style="margin-top:15px">
+    <label>User's Telephone Number</label>
+    @Html.TextBoxFor(u => u.TELEFON, new { @class = "form-control" })
+    @Html.ValidationMessageFor(u => u.TELEFON, "", new { @style = "color:red" })
+    </div>
+
+    <div style="margin-top:15px">
+    <label>User's School</label>
+    @Html.TextBoxFor(u => u.OKUL, new { @class = "form-control" })   
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-warning">ADD PERSONNEL</button>
+    </div>
+</form>
+

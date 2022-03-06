@@ -1,0 +1,50 @@
+﻿@model Colorful_Universe_Library.Models.Entity.TBLKITAP
+@{
+    ViewBag.Title = "AddBook";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>ADD BOOK</h2>
+
+<form class="form-group" method="post">
+
+    <div style="margin-top:15px">
+        <label>Name Of Book</label>
+        @Html.TextBoxFor(a => a.AD, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Category Of Book</label>
+        @Html.DropDownListFor(a => a.TBLKATEGORI.ID,(List<SelectListItem>)ViewBag.vl2, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Writer Of Book</label>
+        @Html.DropDownListFor(a => a.TBLYAZAR.ID,(List<SelectListItem>)ViewBag.vl3, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Publisher Of Book</label>
+        @Html.TextBoxFor(a => a.YAYINEVI, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Publish Year Of Book</label>
+        @Html.TextBoxFor(a => a.BASIMYIL, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Page Count</label>
+        @Html.TextBoxFor(a => a.SAYFASAYISI, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>State</label>
+        @Html.TextBoxFor(a => a.DURUM, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-warning">ADD BOOK</button>
+    </div>
+</form>
+

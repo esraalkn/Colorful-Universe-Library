@@ -1,0 +1,24 @@
+﻿@model Colorful_Universe_Library.Models.Entity.TBLPERSONEL
+@{
+    ViewBag.Title = "AddPersonnel";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>ADD PERSONNEL</h2>
+
+<form class="form-group" method="post">
+
+    <div style="margin-top:15px">
+        <label>Personnel's Name</label>
+        @Html.TextBoxFor(a => a.PERSONEL, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.PERSONEL, "", new { @style ="color:red" })
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-warning">ADD PERSONNEL</button>
+    </div>
+</form>
+
+
+
+

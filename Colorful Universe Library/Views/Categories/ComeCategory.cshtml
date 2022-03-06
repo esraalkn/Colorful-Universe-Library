@@ -1,0 +1,22 @@
+﻿@model Colorful_Universe_Library.Models.Entity.TBLKATEGORI
+@{
+    ViewBag.Title = "ComeCategory";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateCategory", "Categories", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+
+    <div class="form-group">
+        @Html.LabelFor(k => k.ID)
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(k => k.AD)
+        @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-warning">Update</button>
+    </div>
+}

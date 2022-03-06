@@ -1,0 +1,30 @@
+﻿@model Colorful_Universe_Library.Models.Entity.TBLYAZAR
+@{
+    ViewBag.Title = "ComeWriter";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateWriter", "Writers", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+
+    <div class="form-group">
+        <label>ID</label>
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        <br />
+        <label>Writer's Name</label>
+        @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
+        <br />
+        <label>Writer's Surname</label>
+        @Html.TextBoxFor(k => k.SOYAD, new { @class = "form-control" })
+        <br />
+        <label>Details</label>
+        @Html.TextAreaFor(k => k.DETAY, new { @class = "form-control" })
+        <br />
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-warning">Update</button>
+    </div>
+}
+

@@ -1,0 +1,98 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #000000;
+            overflow-x: hidden;
+            padding-top: 16px;
+        }
+
+        .rainbow-text {
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-family: sans-serif;
+            background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sidebar a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 15px;
+            color: #fef552;
+            display: block;
+        }
+
+            .sidebar a:hover {
+                color: #0977bf;
+            }
+
+        .main {
+            margin-left: 210px; /* Same as the width of the sidenav */
+            padding: 0px 10px;
+        }
+
+        @@media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+
+                .sidebar a {
+                    font-size: 18px;
+                }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+
+        <a href="#home" class="rainbow-text"><i class="fas fa-rainbow" style='font-size:25px;'></i>&nbsp;Colorful Universe Library</a>
+        <br />
+        <a href="#home"><i class="fa fa-fw fa-home" style='font-size:25px'></i> &nbsp; Home</a>
+        <a href="/Categories/Index"><i class="far fa-bookmark" style='font-size:25px'></i> &nbsp; Categories</a>
+        <a href="/Books/Index"><i class="fas fa-book-open" style='font-size:25px'></i> &nbsp; Books</a>
+        <a href="/Writers/Index"><i class="fas fa-pen-nib" style='font-size:25px'></i> &nbsp; Writers</a>
+        <a href="/Users/Index"><i class="fas fa-users" style='font-size:25px'></i> &nbsp; Users</a>
+        <a href="/Personnel/Index"><i class="fa fa-fw fa-user-tie" style='font-size:25px'></i> &nbsp; Staffs</a>
+        <a href="#contact"><i class="fas fa-sign-in-alt" style='font-size:25px'></i> &nbsp; Borrow a Book</a>
+        <a href="#contact"><i class="fas fa-sign-out-alt" style='font-size:25px'></i> &nbsp; Lend a Book</a>
+        <a href="#contact"><i class="fas fa-donate" style='font-size:25px'></i> &nbsp; Case</a>
+        <a href="#contact"><i class="fas fa-image" style='font-size:25px'></i> &nbsp; Gallery</a>
+        <a href="#contact"><i class="fas fa-gift" style='font-size:25px'></i> &nbsp; Shop Window</a>
+        <a href="#contact"><i class="fas fa-sliders-h" style='font-size:25px'></i> &nbsp; Transactions</a>
+        <a href="#contact"><i class="fas fa-cogs" style='font-size:25px'></i> &nbsp; Settings</a>
+        <a href="#contact"><i class="fas fa-headset" style='font-size:25px'></i> &nbsp; Help</a>
+        <a href="#contact"><i class="fas fa-power-off" style='font-size:25px'></i> &nbsp; Exit</a>
+    </div>
+
+    <div class="main">
+        
+        @RenderBody()
+        
+    </div>
+
+</body>
+</html>
+

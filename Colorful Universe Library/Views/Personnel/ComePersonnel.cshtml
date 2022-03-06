@@ -1,0 +1,27 @@
+﻿@model Colorful_Universe_Library.Models.Entity.TBLPERSONEL
+@{
+    ViewBag.Title = "ComePersonnel";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>UPDATE PERSONNEL</h2>
+
+@using (Html.BeginForm("UpdatePersonnel", "Personnel", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+
+    <div class="form-group">
+        <label>ID</label>
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        <br />
+        <label>Writer's Name</label>
+        @Html.TextBoxFor(k => k.PERSONEL, new { @class = "form-control" })
+        <br />
+        
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-warning">Update</button>
+    </div>
+}
+

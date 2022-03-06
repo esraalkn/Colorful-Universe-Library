@@ -1,0 +1,49 @@
+﻿@model Colorful_Universe_Library.Models.Entity.TBLUYELER
+@{
+    ViewBag.Title = "ComeUser";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>UPDATE USER</h2>
+
+@using (Html.BeginForm("UpdateUser", "Users", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+
+    <div class="form-group">
+        <label>ID</label>
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        <br />
+        <label>User's Name</label>
+        @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.AD, "", new { @style = "color:red" })
+        <br />
+        <label>User's Surname</label>
+        @Html.TextBoxFor(k => k.SOYAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.SOYAD, "", new { @style = "color:red" })
+        <br />
+        <label>User's Mail</label>
+        @Html.TextAreaFor(k => k.MAIL, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.MAIL, "", new { @style = "color:red" })
+        <br />
+        <label>User's Nickname</label>
+        @Html.TextAreaFor(k => k.KULLANICIADI, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.KULLANICIADI, "", new { @style = "color:red" })
+        <br />
+        <label>User's Password</label>
+        @Html.TextAreaFor(k => k.SIFRE, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.SIFRE, "", new { @style = "color:red" })
+        <br />
+        <label>User's Telephone Number</label>
+        @Html.TextAreaFor(k => k.TELEFON, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.TELEFON, "", new { @style = "color:red" })
+        <br />
+        <label>User's School</label>
+        @Html.TextAreaFor(k => k.OKUL, new { @class = "form-control" })
+        <br />
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-warning">Update</button>
+    </div>
+}

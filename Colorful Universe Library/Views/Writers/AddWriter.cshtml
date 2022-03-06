@@ -1,0 +1,29 @@
+﻿@model Colorful_Universe_Library.Models.Entity.TBLYAZAR 
+@{
+    ViewBag.Title = "AddWriter";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+
+    <div style="margin-top:15px">
+        <label>Writer's Name'</label>
+        @Html.TextBoxFor(y => y.AD, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Writer's Surname'</label>
+        @Html.TextBoxFor(y => y.SOYAD, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Detail'</label>
+        @Html.TextAreaFor(y => y.DETAY, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-warning">ADD WRITER</button>
+    </div>
+
+</form>
+

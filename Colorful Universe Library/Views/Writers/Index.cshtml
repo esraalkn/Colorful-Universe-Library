@@ -1,0 +1,35 @@
+﻿@using Colorful_Universe_Library.Models.Entity
+@model List<TBLYAZAR>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>WRITERS</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Writer ID</th>
+        <th>Writer's Name</th>
+        <th>Writer's Surname</th>
+        <th>Details</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var wrt in Model)
+    {
+<tr>
+    <td> @wrt.ID </td>
+    <td> @wrt.AD </td>
+    <td> @wrt.SOYAD </td>
+    <td>@wrt.DETAY</td>
+    <td> @Html.ActionLink("DELETE", "DeleteWriter", new { id = wrt.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Do you want to delete?')" })</td>
+    <td> <a class="btn btn-danger" href="/Writers/ComeWriter/@wrt.ID">UPDATE</a> </td>
+
+</tr>
+    }
+
+</table>
+
+<a class="btn btn-primary" style="margin-bottom:20px" href="/Writers/AddWriter">WRITER ADD</a>
+

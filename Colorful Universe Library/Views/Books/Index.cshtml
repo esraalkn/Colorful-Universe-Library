@@ -1,0 +1,45 @@
+﻿@using Colorful_Universe_Library.Models.Entity
+@model List<TBLKITAP>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<h2>BOOKS</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name Of Book</th>
+        <th>Category Of Book</th>
+        <th>Writer Of Book</th>
+        <th>Publisher Of Book</th>
+        <th>Publish Year Of Book</th>
+        <th>Page Count</th>
+        <th>State</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+
+    @foreach (var book in Model)
+    {
+<tr>
+    <td>@book.ID</td>
+    <td>@book.AD</td>
+    <td>@book.KATEGORI</td>
+    <td>@book.YAZAR</td>
+    <td>@book.YAYINEVI</td>
+    <td>@book.BASIMYIL</td>
+    <td>@book.SAYFASAYISI</td>
+    <td>@book.DURUM</td>
+    <td>@Html.ActionLink("DELETE", "DeleteBook", new { id = book.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Do you want to delete')" }) </td>
+    <td><a class="btn btn-warning" href="/Books/ComeBook/@book.ID">UPDATE</a></td>
+
+</tr>
+    }
+</table>
+<a class="btn btn-primary" style="margin-bottom:20px" href="/Books/AddBook">BOOK ADD</a>
+
+
